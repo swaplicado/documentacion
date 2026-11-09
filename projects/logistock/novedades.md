@@ -1,10 +1,7 @@
 ---
 title: Novedades
+description: "Funciones y mejoras incorporadas en cada versión de Logistock."
 ---
-
-# Novedades
-
-Cambios publicados en las aplicaciones de Logistock.
 
 ## 2.2 · OTA 1 · 2026-11-09
 

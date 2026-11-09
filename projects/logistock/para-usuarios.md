@@ -1,12 +1,7 @@
 ---
 title: Guía de usuario
+description: "Logistock reúne aplicaciones para usuarios de inventario, personal de logística y administración. Las opciones disponibles dependen de los grupos que el administrador haya asignado a cada cuenta."
 ---
-
-# Para usuarios
-
-Logistock reúne aplicaciones para usuarios de inventario, personal de logística
-y administración. Las opciones disponibles dependen de los grupos que el
-administrador haya asignado a cada cuenta.
 
 ## Primeros pasos
 

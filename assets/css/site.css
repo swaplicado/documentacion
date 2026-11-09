@@ -193,6 +193,134 @@ a:hover {
   color: var(--brand);
 }
 
+.doc-heading {
+  position: relative;
+  overflow: hidden;
+  max-width: 780px;
+  margin-bottom: 18px;
+  border: 1px solid #dfe8fb;
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at 92% 10%, rgb(91 139 244 / 15%), transparent 34%),
+    linear-gradient(120deg, #f1f5ff 0%, #fbfcff 62%, #f5f8ff 100%);
+  padding: 30px 38px 28px;
+}
+
+.doc-heading .eyebrow {
+  margin-bottom: 8px;
+}
+
+.doc-heading h1 {
+  margin: 0;
+  color: #182746;
+  font-size: clamp(29px, 4vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+
+.doc-heading p {
+  max-width: 640px;
+  margin: 9px 0 0;
+  color: #5e6d86;
+  font-size: 14px;
+}
+
+.page-toc {
+  max-width: 780px;
+  margin: 0 0 18px;
+  border: 1px solid #dfe8fb;
+  border-radius: 12px;
+  background: #f5f8ff;
+}
+
+.page-toc[hidden] {
+  display: none;
+}
+
+.page-toc summary {
+  display: flex;
+  min-height: 52px;
+  padding: 12px 18px;
+  align-items: center;
+  justify-content: space-between;
+  color: #263d70;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 720;
+  list-style: none;
+}
+
+.page-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.page-toc summary::after {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: white;
+  color: var(--brand);
+  content: "+";
+  line-height: 22px;
+  text-align: center;
+}
+
+.page-toc[open] summary::after {
+  content: "−";
+}
+
+.toc-hint {
+  margin-left: auto;
+  padding-right: 12px;
+  color: #7b8aa5;
+  font-size: 11px;
+  font-weight: 450;
+}
+
+.page-toc nav {
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #e2e9f7;
+  padding: 9px 16px 13px;
+}
+
+.page-toc ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 18px;
+  list-style: none;
+}
+
+.page-toc li {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.page-toc li a {
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 4px 7px;
+  color: #51627f;
+  font-size: 11px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-toc li a:hover {
+  background: white;
+  color: var(--brand);
+}
+
+.page-toc li.toc-subsection a {
+  padding-left: 18px;
+  color: #78869d;
+}
+
 .article {
   max-width: 780px;
   padding: 34px 42px 44px;
@@ -237,6 +365,108 @@ a:hover {
   margin: 30px 0 8px;
   font-size: 18px;
   font-weight: 700;
+}
+
+.content-guide .article h2 {
+  display: flex;
+  margin-top: 38px;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+  font-size: 21px;
+}
+
+.content-guide .article h2::before {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border: 1px solid #dce7fb;
+  border-radius: 10px;
+  background: #f1f5ff;
+  color: var(--brand);
+  content: counter(guide-section, decimal-leading-zero);
+  counter-increment: guide-section;
+  font-size: 10px;
+  letter-spacing: 0;
+  place-items: center;
+}
+
+.content-guide .article {
+  counter-reset: guide-section;
+}
+
+.content-guide .article h3 {
+  margin-top: 27px;
+  padding-left: 12px;
+  border-left: 2px solid #c8d7f5;
+  font-size: 16px;
+}
+
+.content-guide .article ol {
+  display: grid;
+  padding: 0;
+  gap: 7px;
+  list-style: none;
+  counter-reset: guide-step;
+}
+
+.content-guide .article ol > li {
+  display: grid;
+  margin: 0;
+  border: 1px solid #e8edf5;
+  border-radius: 9px;
+  background: #fbfcfe;
+  padding: 9px 13px;
+  align-items: baseline;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 8px;
+  counter-increment: guide-step;
+}
+
+.content-guide .article ol > li::before {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: #edf3ff;
+  color: var(--brand);
+  content: counter(guide-step);
+  font-size: 11px;
+  font-weight: 750;
+  place-items: center;
+}
+
+.content-guide .article ul > li::marker {
+  color: var(--brand);
+}
+
+.content-changelog .article h2 {
+  margin: 30px 0 12px;
+  border: 1px solid #dce6f8;
+  border-radius: 10px;
+  background: linear-gradient(105deg, #f1f5ff, #fbfcff);
+  padding: 12px 16px;
+  color: #263d70;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+}
+
+.content-changelog .article ul {
+  display: grid;
+  padding: 0;
+  gap: 8px;
+  list-style: none;
+}
+
+.content-changelog .article ul > li {
+  margin: 0;
+  border: 1px solid #e8edf5;
+  border-left: 3px solid #b8cbf2;
+  border-radius: 0 9px 9px 0;
+  background: #fff;
+  padding: 10px 14px;
 }
 
 .article p,
@@ -466,8 +696,55 @@ a:hover {
   font-size: 11px;
 }
 
+.doc-pagination {
+  display: flex;
+  max-width: 780px;
+  margin-top: 16px;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.doc-pagination a {
+  display: grid;
+  min-width: 150px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+  padding: 10px 14px;
+  gap: 2px;
+}
+
+.doc-pagination a:hover {
+  border-color: #b6c9f3;
+  background: #fbfcff;
+}
+
+.doc-pagination a span {
+  color: #8993a5;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.doc-pagination a strong {
+  color: #334766;
+  font-size: 12px;
+}
+
+.doc-pagination .pagination-next {
+  margin-left: auto;
+  text-align: right;
+}
+
 .content-footer a {
   color: inherit;
+}
+
+@media (min-width: 761px) {
+  .page-toc:not([open]) summary:hover {
+    background: rgb(255 255 255 / 55%);
+    border-radius: 12px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -516,6 +793,18 @@ a:hover {
 
   .article {
     padding: 26px 22px 32px;
+  }
+
+  .doc-heading {
+    padding: 25px 23px 23px;
+  }
+
+  .page-toc ul {
+    grid-template-columns: 1fr;
+  }
+
+  .toc-hint {
+    display: none;
   }
 
   .content-home .article {

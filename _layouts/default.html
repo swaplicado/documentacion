@@ -36,7 +36,7 @@
       </aside>
       {% endunless %}
 
-      <main class="content{% if page.url == '/' %} content-home{% endif %}">
+      <main class="content{% if page.url == '/' %} content-home{% endif %}{% if page.url contains '/projects/logistock/para-usuarios' %} content-guide{% endif %}{% if page.url contains '/projects/logistock/novedades' %} content-changelog{% endif %}">
         {% unless page.url == "/" %}
         <div class="breadcrumbs">
           <a href="{{ '/' | relative_url }}">Inicio</a>
@@ -52,13 +52,59 @@
           {% endif %}
         </div>
         {% endunless %}
+        {% if page.url != "/" and page.url != "/projects/logistock/" %}
+        <header class="doc-heading">
+          <span class="eyebrow">{% if page.url contains "/novedades/" %}ACTUALIZACIONES{% else %}GUÍA PRÁCTICA{% endif %}</span>
+          <h1>{{ page.title | escape }}</h1>
+          {% if page.description %}<p>{{ page.description | escape }}</p>{% endif %}
+        </header>
+        <details class="page-toc" hidden>
+          <summary>
+            <span>En esta página</span>
+            <span class="toc-hint">Ir directamente a una sección</span>
+          </summary>
+          <nav aria-label="Contenido de la página">
+            <ul id="page-toc-links"></ul>
+          </nav>
+        </details>
+        {% endif %}
         <article class="article">
           {{ content }}
         </article>
+        {% if page.url contains "/projects/logistock/para-usuarios" %}
+        <nav class="doc-pagination" aria-label="Más documentación">
+          <a href="{{ '/projects/logistock/' | relative_url }}"><span>PROYECTO</span><strong>← Logistock</strong></a>
+          <a class="pagination-next" href="{{ '/projects/logistock/novedades/' | relative_url }}"><span>SIGUIENTE</span><strong>Ver novedades →</strong></a>
+        </nav>
+        {% elsif page.url contains "/projects/logistock/novedades" %}
+        <nav class="doc-pagination" aria-label="Más documentación">
+          <a href="{{ '/projects/logistock/' | relative_url }}"><span>PROYECTO</span><strong>← Logistock</strong></a>
+          <a class="pagination-next" href="{{ '/projects/logistock/para-usuarios/' | relative_url }}"><span>GUÍA</span><strong>Guía de usuario →</strong></a>
+        </nav>
+        {% endif %}
         <footer class="content-footer">
           <a href="{{ '/' | relative_url }}">Documentación pública de Swaplicado</a>
         </footer>
       </main>
     </div>
+    <script>
+      const toc = document.querySelector(".page-toc");
+      const tocLinks = document.querySelector("#page-toc-links");
+      const headings = document.querySelectorAll(".article h2, .article h3");
+
+      if (toc && tocLinks && headings.length > 1) {
+        headings.forEach((heading) => {
+          if (!heading.id) return;
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = `#${heading.id}`;
+          link.textContent = heading.textContent;
+          if (heading.tagName === "H3") item.classList.add("toc-subsection");
+          item.append(link);
+          tocLinks.append(item);
+        });
+        toc.hidden = false;
+      }
+    </script>
   </body>
 </html>
