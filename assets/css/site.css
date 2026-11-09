@@ -427,19 +427,20 @@ a:hover {
 }
 
 .content-guide .article ol > li {
-  display: grid;
+  position: relative;
+  display: block;
   margin: 0;
   border: 1px solid #e8edf5;
   border-radius: 9px;
   background: #fbfcfe;
-  padding: 9px 13px;
-  align-items: baseline;
-  grid-template-columns: 24px minmax(0, 1fr);
-  gap: 8px;
+  padding: 10px 13px 10px 48px;
   counter-increment: guide-step;
 }
 
 .content-guide .article ol > li::before {
+  position: absolute;
+  top: 10px;
+  left: 13px;
   display: grid;
   width: 22px;
   height: 22px;
