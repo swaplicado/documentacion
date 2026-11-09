@@ -1,5 +1,10 @@
 title: "Documentación pública"
 description: "Guías para usuarios de los proyectos de Swaplicado"
-theme: jekyll-theme-cayman
 markdown: kramdown
 permalink: pretty
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default

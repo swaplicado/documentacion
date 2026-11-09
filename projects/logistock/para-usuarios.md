@@ -1,3 +1,7 @@
+---
+title: Guía de usuario
+---
+
 # Para usuarios
 
 Logistock reúne aplicaciones para usuarios de inventario, personal de logística

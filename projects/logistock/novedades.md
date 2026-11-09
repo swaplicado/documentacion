@@ -1,3 +1,7 @@
+---
+title: Novedades
+---
+
 # Novedades
 
 Cambios publicados en las aplicaciones de Logistock.
