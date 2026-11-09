@@ -9,6 +9,15 @@
     <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
   </head>
   <body>
+    {% assign project_pages = site.pages | where_exp: "candidate", "candidate.url contains '/projects/' and candidate.name == 'index.md'" | sort: "title" %}
+    {% assign project_docs = site.pages | sort: "title" %}
+    {% assign current_project_page = nil %}
+    {% for project_page in project_pages %}
+      {% assign project_url_prefix = project_page.url %}
+      {% if page.url contains project_url_prefix %}
+        {% assign current_project_page = project_page %}
+      {% endif %}
+    {% endfor %}
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="{{ '/' | relative_url }}" aria-label="Documentación pública, inicio">
@@ -17,8 +26,7 @@
         </a>
         <nav class="top-nav" aria-label="Navegación principal">
           <a href="{{ '/' | relative_url }}">Inicio</a>
-          <a href="{{ '/projects/logistock/' | relative_url }}">Logistock</a>
-          <a href="{{ '/projects/logistock/novedades/' | relative_url }}">Novedades</a>
+          <a href="{{ '/' | relative_url }}#projects">Proyectos</a>
         </nav>
       </div>
     </header>
@@ -28,22 +36,28 @@
       <aside class="sidebar">
         <a class="sidebar-home" href="{{ '/' | relative_url }}">Documentación</a>
         <span class="sidebar-label">PROYECTOS</span>
-        <a class="sidebar-project" href="{{ '/projects/logistock/' | relative_url }}">Logistock</a>
+        {% for project_page in project_pages %}
+        {% assign project_url_prefix = project_page.url %}
+        <a class="sidebar-project{% if page.url contains project_url_prefix %} sidebar-project-active{% endif %}" href="{{ project_page.url | relative_url }}">{{ project_page.title | default: project_page.name | escape }}</a>
         <div class="sidebar-links">
-          <a href="{{ '/projects/logistock/para-usuarios/' | relative_url }}">Guía de usuario</a>
-          <a href="{{ '/projects/logistock/novedades/' | relative_url }}">Novedades</a>
+          {% for project_doc in project_docs %}
+          {% if project_doc.url contains project_url_prefix and project_doc.url != project_page.url and project_doc.url contains '/projects/' %}
+          <a class="sidebar-link{% if page.url == project_doc.url %} sidebar-link-active{% endif %}" href="{{ project_doc.url | relative_url }}">{{ project_doc.title | default: project_doc.name | escape }}</a>
+          {% endif %}
+          {% endfor %}
         </div>
+        {% endfor %}
       </aside>
       {% endunless %}
 
-      <main class="content{% if page.url == '/' %} content-home{% endif %}{% if page.url contains '/projects/logistock/para-usuarios' %} content-guide{% endif %}{% if page.url contains '/projects/logistock/novedades' %} content-changelog{% endif %}">
+      <main class="content{% if page.url == '/' %} content-home{% endif %}{% if page.url contains '/para-usuarios' %} content-guide{% endif %}{% if page.url contains '/novedades' %} content-changelog{% endif %}">
         {% unless page.url == "/" %}
         <div class="breadcrumbs">
           <a href="{{ '/' | relative_url }}">Inicio</a>
           <span aria-hidden="true">/</span>
-          {% if page.url contains "/projects/logistock" %}
-          <a href="{{ '/projects/logistock/' | relative_url }}">Logistock</a>
-          {% if page.url != "/projects/logistock/" %}
+          {% if current_project_page %}
+          <a href="{{ current_project_page.url | relative_url }}">{{ current_project_page.title | default: current_project_page.name | escape }}</a>
+          {% if page.url != current_project_page.url %}
           <span aria-hidden="true">/</span>
           <span>{{ page.title | default: "Documentación" | escape }}</span>
           {% endif %}
@@ -52,7 +66,7 @@
           {% endif %}
         </div>
         {% endunless %}
-        {% if page.url != "/" and page.url != "/projects/logistock/" %}
+        {% if page.url != "/" and page.url != current_project_page.url %}
         <header class="doc-heading">
           <span class="eyebrow">{% if page.url contains "/novedades/" %}ACTUALIZACIONES{% else %}GUÍA PRÁCTICA{% endif %}</span>
           <h1>{{ page.title | escape }}</h1>

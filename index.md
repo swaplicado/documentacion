@@ -8,7 +8,7 @@ title: Inicio
   <p>Guías claras, instrucciones prácticas y novedades para aprovechar mejor las herramientas de tu equipo.</p>
 </div>
 
-## Explora la documentación
+<h2 id="projects">Explora la documentación</h2>
 
 <a class="project-card" href="{{ '/projects/logistock/' | relative_url }}">
   <span class="card-icon" aria-hidden="true">L</span>

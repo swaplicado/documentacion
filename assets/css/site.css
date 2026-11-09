@@ -139,10 +139,19 @@ a:hover {
 
 .sidebar-project {
   border-radius: 7px;
-  background: var(--brand-soft);
   padding: 8px 12px;
-  color: var(--brand-dark);
+  color: #526078;
   font-weight: 700;
+}
+
+.sidebar-project:hover,
+.sidebar-project-active {
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+}
+
+.sidebar-links + .sidebar-project {
+  margin-top: 16px;
 }
 
 .sidebar-links {
@@ -162,6 +171,11 @@ a:hover {
 .sidebar-links a:hover,
 .sidebar-home:hover {
   color: var(--brand);
+}
+
+.sidebar-links .sidebar-link-active {
+  color: var(--brand-dark);
+  font-weight: 700;
 }
 
 .content {
