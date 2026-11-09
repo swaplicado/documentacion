@@ -19,4 +19,13 @@ title: Inicio
   <span class="card-arrow" aria-hidden="true">→</span>
 </a>
 
-<p class="home-note">¿Buscas ayuda con otro producto? Pronto encontrarás aquí su documentación.</p>
+<a class="project-card" href="{{ '/projects/app-autorizaciones/' | relative_url }}">
+  <span class="card-icon" aria-hidden="true">A</span>
+  <span class="card-copy">
+    <strong>Autorizaciones</strong>
+    <span>Guía para consultar órdenes de compra, facturas y pagos.</span>
+  </span>
+  <span class="card-arrow" aria-hidden="true">→</span>
+</a>
+
+<p class="home-note">Selecciona un producto para consultar sus guías de usuario.</p>
