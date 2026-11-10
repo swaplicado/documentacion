@@ -3,6 +3,11 @@ title: Novedades
 description: "Funciones y mejoras incorporadas en cada versión de Logistock."
 ---
 
+## 2.2 · OTA 2 · 2026-11-10
+
+- Resumen de totales y promedios en resumen semanal.
+- Modificación de fecha de consulta en existencias generales.
+
 ## 2.2 · OTA 1 · 2026-11-09
 
 - Manejo optimizado de datos biométricos y almacenamiento seguro.

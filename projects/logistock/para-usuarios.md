@@ -55,10 +55,36 @@ lo registró. La unidad se muestra únicamente cuando está asociada al evento.
 Usa el buscador y los filtros para encontrar registros; al seleccionar un
 chofer con eventos puedes consultar su historial.
 
-El estatus se deriva del último evento: **Libre** cuando la acción terminó el
+El estatus se deriva del último evento: **En espera** cuando la acción terminó el
 flujo, y si no **En tránsito** o **En sitio** según la acción del último evento (la acción marcada como **Es un punto de tránsito** en Administración → Checkpoints → Acciones). Los usuarios de Punto de control solo ven eventos de sus
 checkpoints asignados. El tablero se actualiza periódicamente y también permite
 refrescar manualmente.
+
+#### Marcar el inicio y el fin de un flujo
+
+Los usuarios con el grupo **Administrador** o **Supervisor Logística** pueden
+corregir las marcas de inicio y fin desde el historial, tanto en web como en
+móvil:
+
+1. En **Eventos**, selecciona la fila o tarjeta de un chofer para abrir su
+   historial del flujo más reciente.
+2. Busca el primer evento cronológico y selecciona **Marcar inicio**, si está
+   disponible. El historial muestra primero los eventos más recientes; en web
+   usa la paginación y en móvil **Cargar más** para llegar a los más antiguos.
+3. En el último evento cronológico, selecciona **Marcar fin**, si está
+   disponible.
+
+Las etiquetas **Inicio** y **Fin** indican las marcas actuales. Si una marca ya
+está en el evento correspondiente, no aparece el botón para volver a marcarla.
+Solo se pueden marcar el primer y el último evento del flujo; al marcar un
+nuevo extremo, la marca anterior del mismo tipo se reemplaza. Un evento no puede
+tener ambas marcas, por lo que un flujo de un solo evento no puede tener inicio
+y fin simultáneamente.
+
+Marcar el fin cambia el estado del chofer a **En espera** y el flujo aparece como
+terminado en el reporte de tiempos. Los usuarios de Punto de control pueden ver
+las marcas en sus eventos visibles, pero no modificarlas, salvo que también
+tengan alguno de los grupos autorizados.
 
 ### Consultar los tiempos entre escaneos
 
