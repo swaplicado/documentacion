@@ -34,6 +34,48 @@ Los módulos **Supervisión de inventario** y **Existencias generales** permiten
 consultar información según los permisos de la cuenta. Usa la fecha y el
 almacén disponibles en cada pantalla para encontrar los datos que necesitas.
 
+### Consultar el resumen semanal
+
+El módulo **Resumen Semanal** está disponible en web y móvil para las cuentas
+con el grupo **Administrador** o **Supervisor Inventario**, y para
+superusuarios. Muestra las compras y cargas de los almacenes disponibles para
+tu cuenta durante una semana, de lunes a domingo.
+
+1. Abre **Resumen Semanal**. La semana inicial corresponde a la fecha de
+   trabajo de tu sesión; si no está disponible, se usa la fecha actual.
+2. Usa las flechas para cambiar de semana o selecciona una fecha en el
+   calendario para consultar la semana que la contiene.
+3. Selecciona un ítem para filtrar los datos o deja **Todos los ítems**.
+4. Elige **Camiones** o **Cajas**. En camiones, la cantidad se divide entre la
+   capacidad configurada de cajas por camión, que aparece en la pantalla.
+
+La tabla compacta muestra el total semanal de compras y cargas y sus
+promedios. La tabla general desglosa compras y cargas por día y almacén,
+seguidas del total semanal y los promedios; la fila **TOTAL** reúne los
+resultados. En móvil, desliza la tabla horizontalmente para ver todas las
+columnas y verticalmente para llegar a los almacenes y a la fila **TOTAL**.
+
+Los promedios se calculan así:
+
+- **Compras por almacén:** la suma de las compras de los días con compras
+  mayores que cero se divide entre el número de esos días. Si no hubo compras,
+  se muestra `—`.
+- **Cargas por almacén:** el total de cargas de la semana se divide entre siete,
+  incluidos los días sin cargas.
+- **Promedios de la fila TOTAL:** se promedian los promedios de los almacenes,
+  sin ponderarlos por su volumen. En compras se excluyen los almacenes cuyo
+  promedio es `—`; en cargas se incluyen los promedios de todos los almacenes,
+  incluso cuando son cero. La tabla compacta usa estos mismos promedios.
+
+Por ejemplo, si los promedios de compras de dos almacenes son 10 y 20 cajas,
+el promedio global es 15 cajas, aunque hayan comprado en distinto número de
+días.
+
+El símbolo `—` en una cantidad indica que no se registraron movimientos para
+esa celda; los valores numéricos se muestran con dos decimales. En la web,
+**CSV** y **Excel** descargan la tabla general con la semana, el filtro y la
+unidad seleccionados, incluida la fila **TOTAL**.
+
 ### Administrar usuarios y logística
 
 En la aplicación web, según los permisos asignados, están disponibles las
