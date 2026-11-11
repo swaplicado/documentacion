@@ -73,8 +73,11 @@ el promedio global es 15 cajas, aunque hayan comprado en distinto número de
 días.
 
 El símbolo `—` en una cantidad indica que no se registraron movimientos para
-esa celda. Las cantidades se muestran redondeadas a enteros, con comas para
-separar miles; los promedios se muestran con dos decimales. El redondeo es solo
+esa celda. Las cantidades en cajas se muestran redondeadas a enteros; las
+cantidades en camiones y los promedios en ambas unidades se muestran con dos
+decimales. En
+existencias generales, la fila **TOTAL CAMIONES** también usa dos decimales.
+Se usan comas para separar miles. El redondeo es solo
 de presentación y no modifica las cantidades guardadas. En la web, **CSV** y
 **Excel** descargan la tabla general con la semana, el filtro y la unidad
 seleccionados, incluida la fila **TOTAL**, conservando la precisión numérica.
@@ -91,9 +94,10 @@ pantallas para administrar:
   como **Permitir escaneo sin conexión** si está en un sitio con señal inestable.
 - Configuración de la aplicación.
 
-Un **Administrador** puede crear usuarios y asignarles almacenes. Solo un
-superusuario puede asignar o retirar los roles **Administrador**,
-**Anfitrión** y **Administrador de accesos**.
+Un **Administrador** puede crear usuarios y asignarles almacenes. Los roles
+**Anfitrión** y **Administrador de accesos** solo puede asignarlos o retirarlos
+un superusuario; los demás roles de esos usuarios pueden editarse sin cambiar
+los roles protegidos.
 
 ### Monitorear eventos
 

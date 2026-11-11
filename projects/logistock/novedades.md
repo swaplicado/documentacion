@@ -3,6 +3,11 @@ title: Novedades
 description: "Funciones y mejoras incorporadas en cada versión de Logistock."
 ---
 
+## 2.2 · OTA 3 · 2026-11-10
+
+- Fecha en captura del día más evidente.
+- Formato de cantidades con separación de miles.
+
 ## 2.2 · OTA 2 · 2026-11-10
 
 - Resumen de totales y promedios en resumen semanal.
