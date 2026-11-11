@@ -4,6 +4,8 @@ Este repositorio reúne la documentación pública de usuario de varios
 proyectos. GitHub Pages publica el contenido de este repositorio; todo lo que
 se agregue aquí debe considerarse público.
 
+Consulta la [documentación pública de Swaplicado](https://swaplicado.github.io/documentacion/).
+
 ## Proyectos
 
 La portada del sitio lista automáticamente los proyectos que tienen una página
