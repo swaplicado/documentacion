@@ -3,7 +3,7 @@ title: Guía de usuario
 description: Instrucciones para iniciar sesión, consultar autorizaciones y revisar pagos en la aplicación móvil.
 ---
 
-[← Volver a Autorizaciones]({{ '/projects/app-autorizaciones/' | relative_url }}) ·
+[← Volver a App Autorizaciones]({{ '/projects/app-autorizaciones/' | relative_url }}) ·
 [Centro de documentación]({{ '/' | relative_url }})
 
 ## Primeros pasos
@@ -12,7 +12,7 @@ Necesitas tener instalada la aplicación y contar con un usuario y contraseña
 asignados por tu organización. La app requiere conexión a internet para iniciar
 sesión y consultar información.
 
-1. Abre **Autorizaciones**.
+1. Abre la app **Autorizaciones** en tu celular.
 2. Escribe tu **Usuario** y **Contraseña** y selecciona **Iniciar sesión**.
 3. Si ya configuraste el acceso biométrico en tu dispositivo, también puedes
    seleccionar **Ingresar con huella o rostro**. Si no está disponible, inicia

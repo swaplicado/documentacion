@@ -1,6 +1,6 @@
 ---
-title: Autorizaciones
-description: Guía para usar la aplicación móvil Autorizaciones.
+title: App Autorizaciones
+description: Guía para usar App Autorizaciones en tu celular.
 ---
 
 ## ¿Qué necesitas hacer?
