@@ -1,6 +1,5 @@
 ---
 title: Logistock
-description: Guías de inventario, logística, eventos y administración.
 ---
 
 <div class="page-intro">
