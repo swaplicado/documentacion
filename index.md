@@ -12,8 +12,8 @@ title: Inicio
 
 {% assign project_pages = site.pages | sort: "url" %}
 {% for project_page in project_pages %}
-{% assign directory_parts = project_page.dir | split: "/" %}
-{% if project_page.name == "index.md" and directory_parts[0] == "projects" and directory_parts.size == 2 %}
+{% assign url_parts = project_page.url | split: "/" %}
+{% if project_page.name == "index.md" and url_parts[1] == "projects" and url_parts.size == 4 %}
 <a class="project-card" href="{{ project_page.url | relative_url }}">
   <span class="card-icon" aria-hidden="true">{{ project_page.title | slice: 0 | upcase | escape }}</span>
   <span class="card-copy">
