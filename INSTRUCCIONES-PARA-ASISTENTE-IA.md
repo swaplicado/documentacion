@@ -62,7 +62,10 @@ En el repositorio del proyecto:
 En `swaplicado/documentacion`:
 
 - Crea `projects/<slug-del-proyecto>/index.md` como página índice con enlaces a
-  las páginas públicas del proyecto.
+  las páginas públicas del proyecto. Incluye `title` y `description` en el
+  front matter: la portada agrega automáticamente a “Explora la documentación”
+  cada índice de proyecto; no edites manualmente la lista de tarjetas en
+  `index.md` de la raíz.
 - Publica cada página como Markdown con metadatos Jekyll, por ejemplo:
 
   ```yaml
@@ -94,7 +97,7 @@ El workflow del repositorio fuente debe:
    sobre documentación que mezcle audiencias.
 5. Detectar si no hubo cambios y terminar correctamente sin crear un commit
    vacío.
-6. Crear un commit con identidad de `github-actions[bot]` y publicar el cambio
+6. Crear un commit con identidad de `${{ github.actor }}` y publicar el cambio
    a `main` del repositorio central.
 7. Usar permisos mínimos: el workflow fuente necesita lectura de su propio
    código; el secreto solo debe tener acceso al repositorio central.
@@ -120,7 +123,8 @@ destinos. Evita copiar archivos arbitrarios del repositorio fuente.
 
 Antes de terminar:
 
-1. Ejecuta el generador y verifica que crea todas las páginas esperadas.
+1. Ejecuta el generador y verifica que crea todas las páginas esperadas y que
+   el índice del nuevo proyecto aparece en “Explora la documentación”.
 2. Comprueba que no se genera ni copia documentación de desarrollo, API interna,
    archivos de configuración o secretos.
 3. Valida front matter, enlaces locales, sintaxis YAML del workflow y formato

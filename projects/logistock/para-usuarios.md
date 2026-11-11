@@ -16,9 +16,10 @@ los grupos y almacenes asignados a tu usuario.
 
 ### Registrar una captura de inventario
 
-1. En la aplicación móvil, abre **Captura de inventario**.
+1. En la aplicación móvil, abre **Captura del día**.
 2. Selecciona el almacén que corresponda.
-3. Confirma la fecha de trabajo y completa los renglones solicitados.
+3. Confirma la **fecha de captura**, que permanece visible con el nombre del
+   día mientras te desplazas, y completa los renglones solicitados.
 4. Revisa los datos y envía la captura.
 5. Si la aplicación indica que quedan capturas pendientes, registra las
    restantes para completar el trabajo del día.
@@ -72,9 +73,11 @@ el promedio global es 15 cajas, aunque hayan comprado en distinto número de
 días.
 
 El símbolo `—` en una cantidad indica que no se registraron movimientos para
-esa celda; los valores numéricos se muestran con dos decimales. En la web,
-**CSV** y **Excel** descargan la tabla general con la semana, el filtro y la
-unidad seleccionados, incluida la fila **TOTAL**.
+esa celda. Las cantidades se muestran redondeadas a enteros, con comas para
+separar miles; los promedios se muestran con dos decimales. El redondeo es solo
+de presentación y no modifica las cantidades guardadas. En la web, **CSV** y
+**Excel** descargan la tabla general con la semana, el filtro y la unidad
+seleccionados, incluida la fila **TOTAL**, conservando la precisión numérica.
 
 ### Administrar usuarios y logística
 
@@ -87,6 +90,10 @@ pantallas para administrar:
 - Puntos de control, acciones y asignaciones. Cada checkpoint puede marcarse
   como **Permitir escaneo sin conexión** si está en un sitio con señal inestable.
 - Configuración de la aplicación.
+
+Un **Administrador** puede crear usuarios y asignarles almacenes. Solo un
+superusuario puede asignar o retirar los roles **Administrador**,
+**Anfitrión** y **Administrador de accesos**.
 
 ### Monitorear eventos
 

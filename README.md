@@ -6,11 +6,13 @@ se agregue aquí debe considerarse público.
 
 ## Proyectos
 
-- [Logistock](./projects/logistock/)
+La portada del sitio lista automáticamente los proyectos que tienen una página
+`projects/<proyecto>/index.md`.
 
 ## Agregar un proyecto
 
-1. Crea una carpeta `projects/<proyecto>/` y enlázala desde `index.md`.
+1. Crea `projects/<proyecto>/index.md` con `title` y `description` en el
+   front matter; el proyecto aparecerá automáticamente en la portada.
 2. En el repositorio fuente, mantén los documentos públicos en una lista
    permitida explícita. No sincronices la carpeta completa de documentación
    del proyecto.
