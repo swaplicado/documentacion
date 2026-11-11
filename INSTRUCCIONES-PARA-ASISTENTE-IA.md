@@ -58,6 +58,10 @@ En el repositorio del proyecto:
 - Agrega un script pequeño y verificable para generar o copiar los archivos
   públicos al destino del portal.
 - Agrega un workflow de GitHub Actions para sincronizar solo esos archivos.
+- El generador debe escribir únicamente las páginas públicas del proyecto.
+  No debe editar el `index.md` raíz ni insertar tarjetas manuales: la portada
+  las genera automáticamente desde `projects/<slug-del-proyecto>/index.md`.
+  Si existe una tarjeta manual antigua para el proyecto, elimínala una sola vez.
 
 En `swaplicado/documentacion`:
 
@@ -91,7 +95,8 @@ El workflow del repositorio fuente debe:
    ejecución manual.
 2. Descargar el repositorio `swaplicado/documentacion` con el secreto
    `DOCS_REPO_TOKEN`.
-3. Generar los documentos públicos en `projects/<slug-del-proyecto>/`.
+3. Generar los documentos públicos en `projects/<slug-del-proyecto>/`. No
+   modificar el `index.md` raíz del portal ni agregar tarjetas de proyecto.
 4. Copiar o actualizar únicamente la lista explícita de archivos públicos.
    No sincronices toda la carpeta `docs/` ni uses una copia recursiva amplia
    sobre documentación que mezcle audiencias.
@@ -123,8 +128,9 @@ destinos. Evita copiar archivos arbitrarios del repositorio fuente.
 
 Antes de terminar:
 
-1. Ejecuta el generador y verifica que crea todas las páginas esperadas y que
-   el índice del nuevo proyecto aparece en “Explora la documentación”.
+1. Ejecuta el generador y verifica que crea todas las páginas esperadas, que
+   el índice del nuevo proyecto aparece una sola vez en “Explora la
+   documentación” y que el `index.md` raíz no fue modificado.
 2. Comprueba que no se genera ni copia documentación de desarrollo, API interna,
    archivos de configuración o secretos.
 3. Valida front matter, enlaces locales, sintaxis YAML del workflow y formato
