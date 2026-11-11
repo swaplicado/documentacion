@@ -10,19 +10,22 @@ title: Inicio
 
 <h2 id="projects">Explora la documentación</h2>
 
+<div class="project-list">
 {% assign project_pages = site.pages | sort: "url" %}
 {% for project_page in project_pages %}
 {% assign url_parts = project_page.url | split: "/" %}
 {% if project_page.name == "index.md" and url_parts[1] == "projects" and url_parts.size == 3 %}
+{% assign project_description = project_page.description | default: "Consulta las guías disponibles para este proyecto." %}
 <a class="project-card" href="{{ project_page.url | relative_url }}">
   <span class="card-icon" aria-hidden="true">{{ project_page.title | slice: 0 | upcase | escape }}</span>
   <span class="card-copy">
     <strong>{{ project_page.title | escape }}</strong>
-    {% if project_page.description %}<span>{{ project_page.description | escape }}</span>{% endif %}
+    <span>{{ project_description | escape }}</span>
   </span>
   <span class="card-arrow" aria-hidden="true">→</span>
 </a>
 {% endif %}
 {% endfor %}
+</div>
 
 <p class="home-note">Selecciona un producto para consultar sus guías de usuario.</p>
